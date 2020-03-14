@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    '${status}',
+                    '$status',
                     style: TextStyle(
                       color: status != ConnectivityStatus.none
                           ? Colors.green
