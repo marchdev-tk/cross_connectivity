@@ -1,0 +1,15 @@
+name: cross_connectivity_example
+description: Demonstrates how to use the cross_connectivity package.
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cross_connectivity:
+    path: ../
+
+flutter:
+  uses-material-design: true
