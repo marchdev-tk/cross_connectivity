@@ -71,7 +71,7 @@ class ConnectivityService extends ConnectivityServiceInterface
     return status;
   }
 
-  /// Obtains the wifi name (SSID) of the connected network
+  /// Obtains the wifi name (SSID) of the connected network.
   ///
   /// Please note that it DOESN'T WORK on emulators, Web, Windows and Linux (returns null).
   ///
@@ -89,7 +89,7 @@ class ConnectivityService extends ConnectivityServiceInterface
   @override
   Future<String> getWifiBSSID() => null;
 
-  /// Obtains the IP address of the connected wifi network
+  /// Obtains the IP address of the connected wifi network.
   @override
   Future<String> getWifiIP() => null;
 

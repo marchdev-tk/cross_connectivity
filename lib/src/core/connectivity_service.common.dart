@@ -73,7 +73,7 @@ class ConnectivityService extends ConnectivityServiceInterface
   Future<ConnectivityStatus> checkConnectivity() async => ConnectivityStatus
       .values[(await _connectivity.checkConnectivity()).index];
 
-  /// Obtains the wifi name (SSID) of the connected network
+  /// Obtains the wifi name (SSID) of the connected network.
   ///
   /// Please note that it DOESN'T WORK on emulators, Web, Windows and Linux (returns null).
   ///
@@ -91,7 +91,7 @@ class ConnectivityService extends ConnectivityServiceInterface
   @override
   Future<String> getWifiBSSID() => _connectivity.getWifiBSSID();
 
-  /// Obtains the IP address of the connected wifi network
+  /// Obtains the IP address of the connected wifi network.
   @override
   Future<String> getWifiIP() => _connectivity.getWifiIP();
 

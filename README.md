@@ -38,7 +38,52 @@ Mobile sample:
 
 ### Usage
 
-Will be here soon...
+#### Functional approach
+
+This plugin provides two streams:
+
+ * `isConnected` that shows whether the device is `REALLY` connected to the network or not.
+ * `onConnectivityChanged` that it will not let you know about state of the `REAL` network connection. It only shows connectivity state.
+
+Also for `one time` check could be used following methods:
+
+ * `checkConnection()` that is working like `isConnected`, but returns `Future<bool>` instread of `Stream<bool>`.
+ * `checkConnectivity()` that is working like `onConnectivityChanged`, but returns `Future<ConnectivityStatus>` instread of `Stream<ConnectivityStatus>`.
+
+As an addition there are more methods (they are working only on Android/iOS/macOS):
+
+ * `getWifiName()`  - Obtains the wifi name (SSID) of the connected network.
+ * `getWifiBSSID()` - Obtains the wifi BSSID of the connected network.
+ * `getWifiIP()` - Obtains the IP address of the connected wifi network.
+
+#### Widget approach
+
+As an alteration to funcitonal approach could be used `ConnectivityBuilder` widget as follows:
+
+```dart
+ConnectivityBuilder(
+  builder: (context, isConnected, status) => Row(
+    mainAxisSize: MainAxisSize.min,
+    children: <Widget>[
+      Icon(
+        isConnected == true
+            ? Icons.signal_wifi_4_bar
+            : Icons.signal_wifi_off,
+        color: isConnected == true ? Colors.green : Colors.red,
+      ),
+      const SizedBox(width: 8),
+      Text(
+        '$status',
+        style: TextStyle(
+          color: status != ConnectivityStatus.none
+              ? Colors.green
+              : Colors.red,
+        ),
+      ),
+    ],
+  ),
+)
+```
 
 ## Feature requests and Bug reports
 

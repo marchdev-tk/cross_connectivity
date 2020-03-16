@@ -62,7 +62,7 @@ abstract class BaseConnectivityServiceInterface {
   /// Instead listen for connectivity changes via [onConnectivityChanged] stream.
   Future<ConnectivityStatus> checkConnectivity();
 
-  /// Obtains the wifi name (SSID) of the connected network
+  /// Obtains the wifi name (SSID) of the connected network.
   ///
   /// Please note that it DOESN'T WORK on emulators, Web, Windows and Linux (returns null).
   ///
@@ -78,7 +78,7 @@ abstract class BaseConnectivityServiceInterface {
   /// in order to be able to obtain the BSSID.
   Future<String> getWifiBSSID();
 
-  /// Obtains the IP address of the connected wifi network
+  /// Obtains the IP address of the connected wifi network.
   Future<String> getWifiIP();
 
   void dispose();

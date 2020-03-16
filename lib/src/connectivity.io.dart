@@ -59,7 +59,7 @@ class Connectivity implements BaseConnectivityServiceInterface {
   Future<ConnectivityStatus> checkConnectivity() =>
       _connectivityService.checkConnectivity();
 
-  /// Obtains the wifi name (SSID) of the connected network
+  /// Obtains the wifi name (SSID) of the connected network.
   ///
   /// Please note that it DOESN'T WORK on emulators, Web, Windows and Linux (returns null).
   ///
@@ -77,7 +77,7 @@ class Connectivity implements BaseConnectivityServiceInterface {
   @override
   Future<String> getWifiBSSID() => _connectivityService.getWifiBSSID();
 
-  /// Obtains the IP address of the connected wifi network
+  /// Obtains the IP address of the connected wifi network.
   @override
   Future<String> getWifiIP() => _connectivityService.getWifiIP();
 
