@@ -1,6 +1,7 @@
 # cross_connectivity
 
 ![Build](https://github.com/marchdev-tk/cross_connectivity/workflows/build/badge.svg)
+[![Pub](https://img.shields.io/pub/v/cross_connectivity.svg)](https://pub.dartlang.org/packages/cross_connectivity)
 ![GitHub](https://img.shields.io/github/license/marchdev-tk/cross_connectivity)
 ![GitHub stars](https://img.shields.io/github/stars/marchdev-tk/cross_connectivity?style=social)
 
@@ -9,6 +10,12 @@ A Flutter plugin for handling `Connectivity` and `REAL Connection` state in the 
 ## Getting Started
 
 In order to use this plugin, add dependency in the `pubspec.yaml`:
+
+```yaml
+cross_connectivity: ^1.0.0
+```
+
+or
 
 ```yaml
 cross_connectivity:
