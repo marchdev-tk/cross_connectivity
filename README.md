@@ -12,7 +12,7 @@ A Flutter plugin for handling `Connectivity` and `REAL Connection` state in the 
 In order to use this plugin, add dependency in the `pubspec.yaml`:
 
 ```yaml
-cross_connectivity: ^1.0.0
+cross_connectivity: ^1.0.1
 ```
 
 or
