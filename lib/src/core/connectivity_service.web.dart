@@ -30,14 +30,20 @@ class ConnectivityService extends ConnectivityServiceInterface {
 
     html.window.addEventListener('online', (_) => update(true));
     html.window.addEventListener('offline', (_) => update(false));
-    _subscription = html.window.navigator.connection.onChange
-        .listen((_) => update(html.window.navigator.onLine));
+
+    /// [NetworkInformation] could be null due to incompatiability with Safari and IE.
+    _subscription = html.window.navigator.connection?.onChange
+        ?.listen((_) => update(html.window.navigator.onLine));
+
     update(html.window.navigator.onLine);
   }
 
   StreamSubscription _subscription;
 
-  /// Gets [ConnectivityStatus] from `Window.Navigator.NetworkInformation.type`
+  /// Gets [ConnectivityStatus] from `Window.Navigator.NetworkInformation.type`.
+  /// 
+  /// [NetworkInformation] could be null due to incompatiability with Safari and IE,
+  /// so [ConnectivityStatus] in this case will be [ConnectivityStatus.unknown].
   ConnectivityStatus get _connectivityStatus {
     if (!html.window.navigator.onLine) {
       return ConnectivityStatus.none;
@@ -45,7 +51,8 @@ class ConnectivityService extends ConnectivityServiceInterface {
 
     ConnectivityStatus status;
 
-    switch (html.window.navigator.connection.type) {
+    /// [NetworkInformation] could be null due to incompatiability with Safari and IE.
+    switch (html.window.navigator.connection?.type) {
       case 'ethernet':
         status = ConnectivityStatus.ethernet;
         break;
