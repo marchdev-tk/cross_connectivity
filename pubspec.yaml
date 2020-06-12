@@ -11,10 +11,10 @@ dependencies:
     sdk: flutter
 
   meta: ^1.1.8
-  http: ^0.12.0+4
-  rxdart: ^0.23.1
-  connectivity: ^0.4.8+2
-  connectivity_macos: ^0.1.0+2
+  http: ^0.12.1
+  rxdart: ^0.24.1
+  connectivity: ^0.4.8+6
+  connectivity_macos: ^0.1.0+3
 
 dev_dependencies:
   flutter_test:
