@@ -16,8 +16,6 @@ class ConnectivityService extends ConnectivityServiceInterface {
   /// Constructs a singleton instance of [ConnectivityService].
   ConnectivityService() : super() {
     void update(bool isConnected) {
-      print(isConnected);
-
       if (connected.value != isConnected) {
         connected.add(isConnected);
       }

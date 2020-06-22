@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.2]
+
+* Removed debug printing.
+
 ## [1.0.1]
 
 * Fixed incompatibility issue with Safari and IE of NetworkInformation API.
