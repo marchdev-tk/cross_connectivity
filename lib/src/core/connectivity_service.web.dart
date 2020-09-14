@@ -8,6 +8,7 @@ import 'dart:html' as html;
 
 import 'package:rxdart/rxdart.dart';
 
+import '../../cross_connectivity.dart';
 import 'connectivity_service.interface.dart';
 
 /// Discover network connectivity configurations: Distinguish between WI-FI
@@ -29,9 +30,11 @@ class ConnectivityService extends ConnectivityServiceInterface {
     html.window.addEventListener('online', (_) => update(true));
     html.window.addEventListener('offline', (_) => update(false));
 
-    /// [NetworkInformation] could be null due to incompatiability with Safari and IE.
-    _subscription = html.window.navigator.connection?.onChange
-        ?.listen((_) => update(html.window.navigator.onLine));
+    if (ConnectivitySettings.enablePolling) {
+      /// [NetworkInformation] could be null due to incompatiability with Safari and IE.
+      _subscription = html.window.navigator.connection?.onChange
+          ?.listen((_) => update(html.window.navigator.onLine));
+    }
 
     update(html.window.navigator.onLine);
   }
@@ -39,7 +42,7 @@ class ConnectivityService extends ConnectivityServiceInterface {
   StreamSubscription _subscription;
 
   /// Gets [ConnectivityStatus] from `Window.Navigator.NetworkInformation.type`.
-  /// 
+  ///
   /// [NetworkInformation] could be null due to incompatiability with Safari and IE,
   /// so [ConnectivityStatus] in this case will be [ConnectivityStatus.unknown].
   ConnectivityStatus get _connectivityStatus {

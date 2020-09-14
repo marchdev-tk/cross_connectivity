@@ -4,6 +4,7 @@
 
 import 'dart:io' show InternetAddress, SocketException;
 
+import '../../cross_connectivity.dart';
 import 'connectivity_service.interface.dart';
 
 mixin ConnectivityMixin on ConnectivityServiceInterface {
@@ -11,7 +12,8 @@ mixin ConnectivityMixin on ConnectivityServiceInterface {
     bool hasConnection = false;
 
     try {
-      final result = await InternetAddress.lookup('google.com');
+      final result =
+          await InternetAddress.lookup(ConnectivitySettings.lookupHost);
       if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
         hasConnection = true;
       }
@@ -21,7 +23,11 @@ mixin ConnectivityMixin on ConnectivityServiceInterface {
   }
 
   void lookupPolling({bool updateConnectivityStatus = false}) async {
-    await Future.delayed(Duration(minutes: 1));
+    if (!ConnectivitySettings.enablePolling) {
+      return;
+    }
+
+    await Future.delayed(ConnectivitySettings.lookupDuration);
 
     final hasRealConnection = await hasConnection();
     if (connected.value != hasRealConnection) {
