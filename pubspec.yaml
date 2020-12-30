@@ -10,15 +10,15 @@ dependencies:
   flutter:
     sdk: flutter
 
-  meta: ^1.1.8
-  http: ^0.12.1
-  rxdart: ^0.24.1
+  meta: ^1.2.4
+  http: ^0.12.2
+  rxdart: ^0.25.0
   connectivity: ^0.4.8+6
   connectivity_macos: ^0.1.0+3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic: ^1.8.0
+  pedantic: ^1.9.2
 
 flutter:

@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+* Update libs: meta, http, rxdart, pedantic
+
 ## 1.1.0
 
 * Added `ConnectivitySettings` with configurable `lookupDuration`, `lookupHost`, `enablePolling`.
