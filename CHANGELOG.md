@@ -2,7 +2,7 @@
 
 ## 1.1.1
 
-* Update libs: meta, http, rxdart, pedantic
+* Update libs: meta, http, rxdart
 
 ## 1.1.0
 
