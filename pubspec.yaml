@@ -12,8 +12,9 @@ dependencies:
 
   meta: ^1.2.4
   http: ^0.12.2
-  rxdart: ^0.24.1
+  rxdart: ^0.25.0
   connectivity: ^2.0.2
+  connectivity_macos: ^0.1.0+7
 
 dev_dependencies:
   flutter_test:

@@ -14,6 +14,10 @@
   final String wifiName = await _wifiInfo.getWifiName();
   ```
 
+## 1.1.1
+
+* Update libs: meta, http, rxdart
+
 ## 1.1.0
 
 * Added `ConnectivitySettings` with configurable `lookupDuration`, `lookupHost`, `enablePolling`.
