@@ -57,11 +57,24 @@ Also for `one time` check could be used following methods:
  * `checkConnection()` that is working like `isConnected`, but returns `Future<bool>` instread of `Stream<bool>`.
  * `checkConnectivity()` that is working like `onConnectivityChanged`, but returns `Future<ConnectivityStatus>` instread of `Stream<ConnectivityStatus>`.
 
-As an addition there are more methods (they are working only on Android/iOS/macOS):
+There are no more methods (they are working only on Android/iOS/macOS):
 
  * `getWifiName()`  - Obtains the wifi name (SSID) of the connected network.
  * `getWifiBSSID()` - Obtains the wifi BSSID of the connected network.
  * `getWifiIP()` - Obtains the IP address of the connected wifi network.
+
+They are removed to [wifi_info_flutter](https://github.com/flutter/plugins/tree/master/packages/wifi_info_flutter).
+
+##### Migration guide:
+
+If you don't use any of the above APIs, your code should work as is. In addition, you can also remove `NSLocationAlwaysAndWhenInUseUsageDescription` and `NSLocationWhenInUseUsageDescription` in `ios/Runner/Info.plist`
+
+If you use any of the above APIs, you can find the same APIs in the [wifi_info_flutter](https://github.com/flutter/plugins/tree/master/packages/wifi_info_flutter/wifi_info_flutter) plugin.
+For example, to migrate `getWifiName`, use the new plugin:
+```dart
+final WifiInfo _wifiInfo = WifiInfo();
+final String wifiName = await _wifiInfo.getWifiName();
+  ```
 
 #### Widget approach
 
