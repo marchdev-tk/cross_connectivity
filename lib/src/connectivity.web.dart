@@ -10,7 +10,9 @@ import 'core/connectivity_service.interface.dart';
 class Connectivity implements BaseConnectivityServiceInterface {
   /// Constructs a singleton instance of [Connectivity].
   factory Connectivity() => _singleton;
+
   const Connectivity._(this._connectivityService);
+
   static final Connectivity _singleton = Connectivity._(ConnectivityService());
 
   final ConnectivityService _connectivityService;
@@ -42,28 +44,6 @@ class Connectivity implements BaseConnectivityServiceInterface {
   @override
   Future<ConnectivityStatus> checkConnectivity() =>
       _connectivityService.checkConnectivity();
-
-  /// Obtains the wifi name (SSID) of the connected network.
-  ///
-  /// Please note that it DOESN'T WORK on emulators, Web, Windows and Linux (returns null).
-  ///
-  /// From android 8.0 onwards the GPS must be ON (high accuracy)
-  /// in order to be able to obtain the SSID.
-  @override
-  Future<String> getWifiName() => _connectivityService.getWifiName();
-
-  /// Obtains the wifi BSSID of the connected network.
-  ///
-  /// Please note that it DOESN'T WORK on emulators, Web, Windows and Linux (returns null).
-  ///
-  /// From Android 8.0 onwards the GPS must be ON (high accuracy)
-  /// in order to be able to obtain the BSSID.
-  @override
-  Future<String> getWifiBSSID() => _connectivityService.getWifiBSSID();
-
-  /// Obtains the IP address of the connected wifi network.
-  @override
-  Future<String> getWifiIP() => _connectivityService.getWifiIP();
 
   @override
   void dispose() => _connectivityService.dispose();

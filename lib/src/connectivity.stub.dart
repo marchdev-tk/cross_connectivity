@@ -39,28 +39,6 @@ class Connectivity implements BaseConnectivityServiceInterface {
   @override
   Future<ConnectivityStatus> checkConnectivity() => throw UnimplementedError();
 
-  /// Obtains the wifi name (SSID) of the connected network.
-  ///
-  /// Please note that it DOESN'T WORK on emulators, Web, Windows and Linux (returns null).
-  ///
-  /// From android 8.0 onwards the GPS must be ON (high accuracy)
-  /// in order to be able to obtain the SSID.
-  @override
-  Future<String> getWifiName() => throw UnimplementedError();
-
-  /// Obtains the wifi BSSID of the connected network.
-  ///
-  /// Please note that it DOESN'T WORK on emulators, Web, Windows and Linux (returns null).
-  ///
-  /// From Android 8.0 onwards the GPS must be ON (high accuracy)
-  /// in order to be able to obtain the BSSID.
-  @override
-  Future<String> getWifiBSSID() => throw UnimplementedError();
-
-  /// Obtains the IP address of the connected wifi network.
-  @override
-  Future<String> getWifiIP() => throw UnimplementedError();
-
   @override
   void dispose() => throw UnimplementedError();
 }
