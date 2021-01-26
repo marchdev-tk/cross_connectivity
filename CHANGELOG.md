@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0
+## 2.0.0 (thanks to [cbenhagen](https://github.com/cbenhagen))
 
 * [Breaking Change] The `getWifiName`, `getWifiBSSID` and `getWifiIP` are removed to [wifi_info_flutter](https://github.com/flutter/plugins/tree/master/packages/wifi_info_flutter)
 * Migration guide:
@@ -14,7 +14,7 @@
   final String wifiName = await _wifiInfo.getWifiName();
   ```
 
-## 1.1.1
+## 1.1.1 (thanks to [otopba](https://github.com/otopba))
 
 * Update libs: meta, http, rxdart
 
