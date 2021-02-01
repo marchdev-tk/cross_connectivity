@@ -30,7 +30,7 @@ mixin ConnectivityMixin on ConnectivityServiceInterface {
     await Future.delayed(ConnectivitySettings.lookupDuration);
 
     final hasRealConnection = await hasConnection();
-    if (connected.value != hasRealConnection) {
+    if (connected.valueWrapper.value != hasRealConnection) {
       connected.add(hasRealConnection);
     }
     if (updateConnectivityStatus == true) {
