@@ -33,20 +33,20 @@ class ConnectivityService extends ConnectivityServiceInterface {
     if (ConnectivitySettings.enablePolling) {
       /// [NetworkInformation] could be null due to incompatiability with Safari and IE.
       _subscription = html.window.navigator.connection?.onChange
-          ?.listen((_) => update(html.window.navigator.onLine));
+          .listen((_) => update(html.window.navigator.onLine ?? false));
     }
 
-    update(html.window.navigator.onLine);
+    update(html.window.navigator.onLine ?? false);
   }
 
-  StreamSubscription _subscription;
+  StreamSubscription? _subscription;
 
   /// Gets [ConnectivityStatus] from `Window.Navigator.NetworkInformation.type`.
   ///
   /// [NetworkInformation] could be null due to incompatiability with Safari and IE,
   /// so [ConnectivityStatus] in this case will be [ConnectivityStatus.unknown].
   ConnectivityStatus get _connectivityStatus {
-    if (!html.window.navigator.onLine) {
+    if (!html.window.navigator.onLine!) {
       return ConnectivityStatus.none;
     }
 
@@ -90,8 +90,8 @@ class ConnectivityService extends ConnectivityServiceInterface {
   /// Checks the `REAL` connection status of the device.
   ///
   /// Instead listen for connection status changes via [isConnected] stream.
-  Future<bool> checkConnection() async {
-    final status = html.window.navigator.onLine;
+  Future<bool?> checkConnection() async {
+    final status = html.window.navigator.onLine ?? false;
 
     if (connected.value != status) {
       connected.add(status);

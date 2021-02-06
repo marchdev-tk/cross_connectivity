@@ -24,11 +24,11 @@ abstract class ConnectivityServiceInterface
   @override
   @mustCallSuper
   void dispose() {
-    if (connected?.isClosed == false) {
-      connected?.close();
+    if (connected.isClosed == false) {
+      connected.close();
     }
-    if (connectivityChanged?.isClosed == false) {
-      connectivityChanged?.close();
+    if (connectivityChanged.isClosed == false) {
+      connectivityChanged.close();
     }
   }
 }
@@ -52,7 +52,7 @@ abstract class BaseConnectivityServiceInterface {
   /// Checks the `REAL` connection status of the device.
   ///
   /// Instead listen for connection status changes via [isConnected] stream.
-  Future<bool> checkConnection();
+  Future<bool?> checkConnection();
 
   /// Checks the connection status of the device.
   ///

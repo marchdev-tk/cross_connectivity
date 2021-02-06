@@ -22,8 +22,7 @@ class ConnectivityService extends ConnectivityServiceInterface
         connectivityChanged.add(status);
       }
 
-      final isConnected =
-          status != ConnectivityStatus.none && await hasConnection();
+      final isConnected = status != ConnectivityStatus.none && await hasConnection();
       if (connected.value != isConnected) {
         connected.add(isConnected);
       }
@@ -34,7 +33,7 @@ class ConnectivityService extends ConnectivityServiceInterface
     lookupPolling();
   }
 
-  StreamSubscription _subscription;
+  StreamSubscription? _subscription;
   final _connectivity = Connectivity();
 
   /// Fires whenever the connection state changes.

@@ -24,10 +24,10 @@ class Connectivity implements BaseConnectivityServiceInterface {
       }
     }
 
-    return _singleton;
+    return _singleton!;
   }
   const Connectivity._(this._connectivityService);
-  static Connectivity _singleton;
+  static Connectivity? _singleton;
 
   final ConnectivityServiceInterface _connectivityService;
 
@@ -47,7 +47,7 @@ class Connectivity implements BaseConnectivityServiceInterface {
   /// Checks the `REAL` connection status of the device.
   ///
   /// Instead listen for connection status changes via [isConnected] stream.
-  Future<bool> checkConnection() => _connectivityService.checkConnection();
+  Future<bool?> checkConnection() => _connectivityService.checkConnection();
 
   /// Checks the connection status of the device.
   ///
