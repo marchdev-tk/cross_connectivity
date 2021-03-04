@@ -1,4 +1,4 @@
-// Copyright (c) 2020, the MarchDev Toolkit project authors. Please see the AUTHORS file
+// Copyright (c) 2021, the MarchDev Toolkit project authors. Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
@@ -33,20 +33,20 @@ class ConnectivityService extends ConnectivityServiceInterface {
     if (ConnectivitySettings.enablePolling) {
       /// [NetworkInformation] could be null due to incompatiability with Safari and IE.
       _subscription = html.window.navigator.connection?.onChange
-          ?.listen((_) => update(html.window.navigator.onLine));
+          .listen((_) => update(html.window.navigator.onLine == true));
     }
 
-    update(html.window.navigator.onLine);
+    update(html.window.navigator.onLine == true);
   }
 
-  StreamSubscription _subscription;
+  StreamSubscription? _subscription;
 
   /// Gets [ConnectivityStatus] from `Window.Navigator.NetworkInformation.type`.
   ///
   /// [NetworkInformation] could be null due to incompatiability with Safari and IE,
   /// so [ConnectivityStatus] in this case will be [ConnectivityStatus.unknown].
   ConnectivityStatus get _connectivityStatus {
-    if (!html.window.navigator.onLine) {
+    if (html.window.navigator.onLine != true) {
       return ConnectivityStatus.none;
     }
 
@@ -91,7 +91,7 @@ class ConnectivityService extends ConnectivityServiceInterface {
   ///
   /// Instead listen for connection status changes via [isConnected] stream.
   Future<bool> checkConnection() async {
-    final status = html.window.navigator.onLine;
+    final status = html.window.navigator.onLine == true;
 
     if (connected.value != status) {
       connected.add(status);

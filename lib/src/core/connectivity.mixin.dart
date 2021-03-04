@@ -1,4 +1,4 @@
-// Copyright (c) 2020, the MarchDev Toolkit project authors. Please see the AUTHORS file
+// Copyright (c) 2021, the MarchDev Toolkit project authors. Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
@@ -30,7 +30,7 @@ mixin ConnectivityMixin on ConnectivityServiceInterface {
     await Future.delayed(ConnectivitySettings.lookupDuration);
 
     final hasRealConnection = await hasConnection();
-    if (connected.value != hasRealConnection) {
+    if (connected.valueWrapper!.value != hasRealConnection) {
       connected.add(hasRealConnection);
     }
     if (updateConnectivityStatus == true) {

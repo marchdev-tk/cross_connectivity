@@ -1,4 +1,4 @@
-// Copyright (c) 2020, the MarchDev Toolkit project authors. Please see the AUTHORS file
+// Copyright (c) 2021, the MarchDev Toolkit project authors. Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
@@ -24,11 +24,11 @@ abstract class ConnectivityServiceInterface
   @override
   @mustCallSuper
   void dispose() {
-    if (connected?.isClosed == false) {
-      connected?.close();
+    if (connected.isClosed == false) {
+      connected.close();
     }
-    if (connectivityChanged?.isClosed == false) {
-      connectivityChanged?.close();
+    if (connectivityChanged.isClosed == false) {
+      connectivityChanged.close();
     }
   }
 }

@@ -6,8 +6,8 @@ import 'package:cross_connectivity/cross_connectivity.dart';
 /// [Stream] and [Connectivity.onConnectivityChanged] [Stream].
 typedef Widget ConnectivityWidgetBuilder(
   BuildContext context,
-  bool isConnected,
-  ConnectivityStatus status,
+  bool? isConnected,
+  ConnectivityStatus? status,
 );
 
 /// Widget that builds itself based on the latest snapshot of interaction with
@@ -47,10 +47,9 @@ class ConnectivityBuilder extends StatelessWidget {
   ///
   /// The [builder] must not be null.
   ConnectivityBuilder({
-    Key key,
-    @required this.builder,
-  })  : assert(builder != null),
-        _connectivity = Connectivity(),
+    Key? key,
+    required this.builder,
+  })  : _connectivity = Connectivity(),
         super(key: key);
 
   final Connectivity _connectivity;
@@ -62,7 +61,7 @@ class ConnectivityBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamBuilder<bool>(
       stream: _connectivity.isConnected,
-      initialData: _connectivity.isConnected.value,
+      initialData: _connectivity.isConnected.valueWrapper!.value,
       builder: (context, isConnected) {
         return StreamBuilder<ConnectivityStatus>(
           stream: _connectivity.onConnectivityChanged,
