@@ -1,5 +1,9 @@
 # Changelog
 
+# 3.0.0
+
+* Updated to NNBD.
+
 ## 2.0.1
 
 * Updated changelog and readme.
