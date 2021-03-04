@@ -1,6 +1,10 @@
 # Changelog
 
-# 3.0.0
+## 3.0.1
+
+* Fixed lint issues
+
+## 3.0.0
 
 * Updated to NNBD.
 

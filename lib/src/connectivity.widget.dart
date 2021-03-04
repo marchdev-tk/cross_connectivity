@@ -1,6 +1,5 @@
-import 'package:flutter/widgets.dart';
-
 import 'package:cross_connectivity/cross_connectivity.dart';
+import 'package:flutter/widgets.dart';
 
 /// Signature for strategies that build widgets based on [Connectivity.isConnected]
 /// [Stream] and [Connectivity.onConnectivityChanged] [Stream].
@@ -49,7 +48,7 @@ class ConnectivityBuilder extends StatelessWidget {
   ConnectivityBuilder({
     Key? key,
     required this.builder,
-  })  : _connectivity = Connectivity(),
+  })   : _connectivity = Connectivity(),
         super(key: key);
 
   final Connectivity _connectivity;
