@@ -60,7 +60,7 @@ class ConnectivityBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return StreamBuilder<bool>(
       stream: _connectivity.isConnected,
-      initialData: _connectivity.isConnected.valueWrapper!.value,
+      initialData: _connectivity.isConnected.valueWrapper?.value,
       builder: (context, isConnected) {
         return StreamBuilder<ConnectivityStatus>(
           stream: _connectivity.onConnectivityChanged,
