@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0.2
+
+* Fixed null pointer exception in `ConnectivityBuilder`
+* Redo android example activity to android embedding v2
+
 ## 3.0.1
 
 * Fixed lint issues
