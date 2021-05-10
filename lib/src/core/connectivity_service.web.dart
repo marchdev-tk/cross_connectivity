@@ -17,12 +17,12 @@ class ConnectivityService extends ConnectivityServiceInterface {
   /// Constructs a singleton instance of [ConnectivityService].
   ConnectivityService() : super() {
     void update(bool isConnected) {
-      if (connected.value != isConnected) {
+      if (connected.valueOrNull != isConnected) {
         connected.add(isConnected);
       }
 
       final status = _connectivityStatus;
-      if (connectivityChanged.value != status) {
+      if (connectivityChanged.valueOrNull != status) {
         connectivityChanged.add(status);
       }
     }
@@ -93,7 +93,7 @@ class ConnectivityService extends ConnectivityServiceInterface {
   Future<bool> checkConnection() async {
     final status = html.window.navigator.onLine == true;
 
-    if (connected.value != status) {
+    if (connected.valueOrNull != status) {
       connected.add(status);
     }
 

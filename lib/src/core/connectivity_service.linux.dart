@@ -45,7 +45,7 @@ class ConnectivityService extends ConnectivityServiceInterface
   Future<bool> checkConnection() async {
     final status = await hasConnection();
 
-    if (connected.value != status) {
+    if (connected.valueOrNull != status) {
       connected.add(status);
     }
 
@@ -64,7 +64,7 @@ class ConnectivityService extends ConnectivityServiceInterface
         ? ConnectivityStatus.unknown
         : ConnectivityStatus.none;
 
-    if (connectivityChanged.value != status) {
+    if (connectivityChanged.valueOrNull != status) {
       connectivityChanged.add(status);
     }
 

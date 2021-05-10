@@ -18,13 +18,13 @@ class ConnectivityService extends ConnectivityServiceInterface
   ConnectivityService() : super() {
     void update(ConnectivityResult result) async {
       final status = ConnectivityStatus.values[result.index];
-      if (connectivityChanged.value != status) {
+      if (connectivityChanged.valueOrNull != status) {
         connectivityChanged.add(status);
       }
 
       final isConnected =
           status != ConnectivityStatus.none && await hasConnection();
-      if (connected.value != isConnected) {
+      if (connected.valueOrNull != isConnected) {
         connected.add(isConnected);
       }
     }
@@ -49,7 +49,7 @@ class ConnectivityService extends ConnectivityServiceInterface
   Future<bool> checkConnection() async {
     final status = await hasConnection();
 
-    if (connected.value != status) {
+    if (connected.valueOrNull != status) {
       connected.add(status);
     }
 
