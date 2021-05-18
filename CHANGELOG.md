@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.3 (thanks to [otopba](https://github.com/otopba))
+
+* Updated libs: rxdart, connectivity.
+
 ## 3.0.2
 
 * Fixed null pointer exception in `ConnectivityBuilder`
