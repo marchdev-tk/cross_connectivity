@@ -5,7 +5,7 @@
 import 'dart:async';
 
 import 'package:rxdart/rxdart.dart';
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
 import 'connectivity.mixin.dart';
 import 'connectivity_service.interface.dart';

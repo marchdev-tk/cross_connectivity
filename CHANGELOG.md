@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.4
+
+- Migrated from the deprecated connectivity plugin to connectivity_plus.
+
 ## 3.0.3 (thanks to [otopba](https://github.com/otopba))
 
 * Updated libs: rxdart, connectivity.
