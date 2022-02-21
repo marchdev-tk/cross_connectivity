@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 
 /// Signature for strategies that build widgets based on [Connectivity.isConnected]
 /// [Stream] and [Connectivity.onConnectivityChanged] [Stream].
-typedef Widget ConnectivityWidgetBuilder(
+typedef ConnectivityWidgetBuilder = Widget Function(
   BuildContext context,
   bool? isConnected,
   ConnectivityStatus? status,
@@ -48,7 +48,7 @@ class ConnectivityBuilder extends StatelessWidget {
   ConnectivityBuilder({
     Key? key,
     required this.builder,
-  })   : _connectivity = Connectivity(),
+  })  : _connectivity = Connectivity(),
         super(key: key);
 
   final Connectivity _connectivity;

@@ -28,6 +28,7 @@ class Connectivity implements BaseConnectivityServiceInterface {
   /// Checks the `REAL` connection status of the device.
   ///
   /// Instead listen for connection status changes via [isConnected] stream.
+  @override
   Future<bool> checkConnection() => throw UnimplementedError();
 
   /// Checks the connection status of the device.

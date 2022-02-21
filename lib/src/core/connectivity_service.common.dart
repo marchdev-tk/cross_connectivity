@@ -46,6 +46,7 @@ class ConnectivityService extends ConnectivityServiceInterface
   /// Checks the `REAL` connection status of the device.
   ///
   /// Instead listen for connection status changes via [isConnected] stream.
+  @override
   Future<bool> checkConnection() async {
     final status = await hasConnection();
 
