@@ -1,8 +1,12 @@
 # Changelog
 
+## 3.0.5
+
+* Updated connectivity_plus plugin version to 2.2.1
+
 ## 3.0.4 (thanks to [lscbot](https://github.com/lscbot))
 
-- Migrated from the deprecated connectivity plugin to connectivity_plus.
+* Migrated from the deprecated connectivity plugin to connectivity_plus.
 
 ## 3.0.3 (thanks to [otopba](https://github.com/otopba))
 
