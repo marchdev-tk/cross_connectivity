@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.0.4
+## 3.0.4 (thanks to [lscbot](https://github.com/lscbot))
 
 - Migrated from the deprecated connectivity plugin to connectivity_plus.
 
