@@ -1,5 +1,5 @@
 name: cross_connectivity
-version: 3.0.3
+version: 3.0.4
 homepage: https://github.com/marchdev-tk/cross_connectivity
 description: A Flutter plugin for handling Connectivity and REAL Connection state in the mobile, web and desktop platforms. Supports iOS, Android, Web, Windows, Linux and macOS.
 
@@ -13,7 +13,7 @@ dependencies:
   meta: ^1.3.0
   http: ^0.13.3
   rxdart: ^0.27.0
-  connectivity: ^3.0.3
+  connectivity_plus: ^1.0.6
   connectivity_macos: ^0.2.0
 
 dev_dependencies:
