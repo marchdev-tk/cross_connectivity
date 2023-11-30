@@ -2,18 +2,35 @@ name: build
 
 on:
   push:
-    branches: 
-      - master
-      - develop
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
-  build:
+  publish:
+    environment: ${{ inputs.environment }}
+    permissions:
+      id-token: write
     
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v1
-    - uses: subosito/flutter-action@v1
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: 'Setup Dart'
+      uses: dart-lang/setup-dart@v1.6.0
+
+    - name: 'Setup Flutter'
+      uses: subosito/flutter-action@v2
       with:
-        channel: 'beta'
-    - run: flutter pub get
+        flutter-version: '3.13.9'
+        channel: 'stable'
+
+    - name: 'Get Packages'
+      run: flutter pub get
+
+    - name: 'Dry Run Publishing'
+      run: flutter packages pub publish --dry-run
+
+    - name: 'Publish Artifact'
+      run: flutter packages pub publish --force
