@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.0
+
+* Updated version of dependancies
+* Updated example app
+
 ## 3.0.5
 
 * Updated connectivity_plus plugin version to 2.2.1
