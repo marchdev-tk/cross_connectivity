@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.0
+
+* Fixed issue [#23](https://github.com/marchdev-tk/cross_connectivity/issues/23)
+* Removed redundant deps that caused macOS build failure
+
 ## 3.1.0
 
 * Updated version of dependancies
