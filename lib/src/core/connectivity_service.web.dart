@@ -54,21 +54,24 @@ class ConnectivityService extends ConnectivityServiceInterface {
 
     /// [NetworkInformation] could be null due to incompatiability with Safari and IE.
     switch (html.window.navigator.connection?.type) {
+      case 'bluetooth':
+        status = ConnectivityStatus.bluetooth;
+        break;
+      case 'wifi':
+        status = ConnectivityStatus.wifi;
+        break;
       case 'ethernet':
         status = ConnectivityStatus.ethernet;
         break;
       case 'cellular':
         status = ConnectivityStatus.mobile;
         break;
-      case 'wifi':
-        status = ConnectivityStatus.wifi;
-        break;
       case 'none':
         status = ConnectivityStatus.none;
         break;
 
       default:
-        status = ConnectivityStatus.unknown;
+        status = ConnectivityStatus.other;
     }
 
     return status;

@@ -35,7 +35,7 @@ mixin ConnectivityMixin on ConnectivityServiceInterface {
     }
     if (updateConnectivityStatus == true) {
       connectivityChanged.add(hasRealConnection
-          ? ConnectivityStatus.unknown
+          ? ConnectivityStatus.other
           : ConnectivityStatus.none);
     }
 
