@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.0
+
+* Updated sdk constraints to `>=3.5.0 <4.0.0`
+* Updated dependencies
+
 ## 3.2.0
 
 * Fixed issue [#23](https://github.com/marchdev-tk/cross_connectivity/issues/23)
