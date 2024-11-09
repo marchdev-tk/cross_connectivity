@@ -46,10 +46,9 @@ class ConnectivityBuilder extends StatelessWidget {
   ///
   /// The [builder] must not be null.
   ConnectivityBuilder({
-    Key? key,
+    super.key,
     required this.builder,
-  })  : _connectivity = Connectivity(),
-        super(key: key);
+  }) : _connectivity = Connectivity();
 
   final Connectivity _connectivity;
 

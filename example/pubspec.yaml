@@ -2,7 +2,7 @@ name: cross_connectivity_example
 description: Demonstrates how to use the cross_connectivity package.
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: '>=3.5.0 <4.0.0'
 
 dependencies:
   flutter:
